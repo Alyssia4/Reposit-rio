@@ -1,0 +1,1 @@
+print("Soma =", sum(map(int, input("Digite números separados por vírgula:\n").split(","))))

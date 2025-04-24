@@ -1,0 +1,1 @@
+print("".join(str(len(p)) for p in input("Digite uma frase:\n").split()))
