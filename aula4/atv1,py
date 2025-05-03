@@ -1,0 +1,19 @@
+import math
+
+class Circulo:
+    def __init__(self, raio):
+        self.raio = raio
+
+    def area(self):
+        return math.pi * self.raio ** 2
+
+    def circunferencia(self):
+        return 2 * math.pi * self.raio
+    
+# testando o código
+
+raio = float(input("Digite o raio do círculo: "))
+c = Circulo(raio)
+
+print(f"Área: {c.area():.2f}")
+print(f"Circunferência: {c.circunferencia():.2f}")
