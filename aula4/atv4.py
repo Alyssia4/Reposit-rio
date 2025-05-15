@@ -12,12 +12,10 @@ class ingresso:
         if self.dia == "qua": return 8
         return self.entrada_inteira() / 2
     
-
 x = ingresso()
 print(x.dia, x.hora)
 print(x.entrada_inteira())
 print(x.meia_entrada())
-
 
 y = ingresso()
 y.dia = "sab"
