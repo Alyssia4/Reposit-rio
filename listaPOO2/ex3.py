@@ -1,8 +1,8 @@
 class conta:
     def __init__(self):
-        self.__titular = ""
-        self.__numero = ""
-        self.__saldo = "0"
+        self._titular = ""
+        self._numero = ""
+        self._saldo = "0"
     def set_titular (self, t):
         if t == "": raise ValueError()
         self.__titular = t
@@ -26,4 +26,3 @@ class conta:
             x.depositar(float(input()))
             print(f"Você tem {x.get_saldo()}")
     UI.main()
-
