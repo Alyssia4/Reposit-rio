@@ -1,4 +1,4 @@
-import math 
+
 
 class Viagem:
     def __init__(self,destino,distancia,litros):
@@ -28,13 +28,13 @@ class UI:
         print("\nMenu:")
         print("1- Calcular consumo:")
         print("2- Fim:")
-        opcao = input("Escolha uma opção")
+        opcao = input("Escolha uma opção:")
         return opcao
     def calculo():
-        destino = input("Informe o destino")
-        distancia = float(input("Informe a distancia em km"))
+        destino = input("Informe o destino:")
+        distancia = float(input("Informe a distancia em km:"))
         
-        litros = float(input("Informe o combustivel em litros"))
+        litros = float(input("Informe o combustivel em litros:"))
 
         viagem = Viagem (destino, distancia, litros)
         print("\n Dados viagem")
