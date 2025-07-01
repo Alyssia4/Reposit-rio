@@ -11,7 +11,6 @@ class Contato:
         
 class ContatoUI:
     __contatos = []
-
     @classmethod
     def main(cls):
         op = 0

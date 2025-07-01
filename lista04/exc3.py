@@ -111,7 +111,6 @@ class PaisUI:
                     mais = pais
             print("País mais populoso:")
             print(mais.to_string())
-
     def mais_povoado(self):
         print("\n--- País Mais Povoado ---")
         if len(self.lista) == 0:

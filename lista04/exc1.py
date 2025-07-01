@@ -10,7 +10,6 @@ class Bingo:
         self.__todas_bolas = []
         for i in range(1, num_bolas + 1):
             self.__todas_bolas.append(i)
-
     def sortear(self):
         if len(self.__bolas_sorteadas) >= self.__num_bolas:
             return -1
