@@ -23,6 +23,7 @@ class Viagem:
     def consumo(self):
         return self._distancia / self._litros
     
+    
 class UI:
     def menu():
         print("\nMenu:")
