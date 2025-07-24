@@ -12,6 +12,7 @@ class Treino:
 
     def set_id(self, id):
         self.__id = id
+        
 
     def get_data(self):
         return self.__data
@@ -31,13 +32,15 @@ class Treino:
     def set_tempo(self, tempo):
         self.__tempo = float(tempo)
 
-    def __str__(self):
+    def ToString(self):
         horas = int(self.__tempo // 60)
         minutos = int(self.__tempo % 60)
         tempo_formatado = f"{horas}h {minutos}min" if horas > 0 else f"{minutos}min"
-        data_formatada = self.__data.strftime("%d/%m/%Y")
-        return f"[ID: {self.__id}] Data: {data_formatada} | Distância: {self.__distancia:.2f} km | Tempo: {tempo_formatado}"
-    
+        return (f"ID: {self.__id}\n"
+                f"Data: {self.__data.strftime('%d/%m/%Y')}\n"
+                f"Distância: {self.__distancia:.2f} km\n"
+                f"Tempo: {tempo_formatado}")
+
 class TreinoUI:
     def __init__(self):
         self.lista = []
@@ -84,13 +87,13 @@ class TreinoUI:
         if not self.lista:
             print("Nenhum treino cadastrado.")
         for treino in self.lista:
-            print(treino)
+            print(treino.ToString())
 
     def listar_id(self):
         id = input("Informe o ID do treino: ")
         for treino in self.lista:
             if treino.get_id() == id:
-                print(treino)
+                print(treino.ToString())
                 return
         print("Treino não encontrado.")
 
@@ -125,14 +128,14 @@ class TreinoUI:
         mais_rapido = self.lista[0]
 
         for treino in self.lista:
-            velocidade_atual = treino.get_distancia() / treino.get_tempo()
-            velocidade_mais_rapido = mais_rapido.get_distancia() / mais_rapido.get_tempo()
+            velocidade_atual = treino.get_distancia() / (treino.get_tempo() / 60)
+            velocidade_mais_rapido = mais_rapido.get_distancia() / (mais_rapido.get_tempo() / 60)
 
             if velocidade_atual > velocidade_mais_rapido:
                 mais_rapido = treino
 
         print("Treino mais rápido (maior velocidade média):")
-        print(mais_rapido)
+        print(mais_rapido.ToString())
 
 if __name__ == "__main__":
     ui = TreinoUI()
